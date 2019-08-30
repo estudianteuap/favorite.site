@@ -1,3 +1,2 @@
 
 {{$user->name}}
-{{$user->email}}
