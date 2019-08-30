@@ -34,7 +34,6 @@
 	@empty
 	no album
 	@endforelse
-	
 
 @endsection
 @section('scripts')

@@ -16,7 +16,7 @@
 });
 */
 
-Route::resource('Album', 'AlbumController');
+Route::resource('Album', 'AlbumController')->middleware('auth');
 
 Route::resource('Fotos', 'FotosController');
 
