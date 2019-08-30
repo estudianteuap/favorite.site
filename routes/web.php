@@ -20,3 +20,7 @@ Route::resource('Album', 'AlbumController');
 
 Route::resource('Fotos', 'FotosController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
