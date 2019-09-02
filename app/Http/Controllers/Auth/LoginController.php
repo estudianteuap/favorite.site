@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/User';
+    protected $redirectTo = '/Perfil';
     //protected $guard = 'admin';
     /**
      * Create a new controller instance.
@@ -36,10 +36,10 @@ class LoginController extends Controller
     {
         $this->middleware('web')->except('logout');
     }
-    protected function redirectTo()
+    /*protected function redirectTo()
     {
-        return '/User';
-    }
+        return url('/Perfil');
+    }*/
     protected function guard()
     {
         return Auth::guard('web');

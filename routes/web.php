@@ -16,15 +16,16 @@
 });
 */
 
-Route::resource('Album', 'AlbumController')->middleware('auth');
+Route::resource('/Album', 'AlbumController')->middleware('auth');
 
-Route::resource('Fotos', 'FotosController');
+Route::resource('/Fotos', 'FotosController');
 
+
+Route::resource('/Perfil', 'UserController');
+
+
+Route::resource('/Test', 'TestController');
 
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-
-
-Route::resource('User', 'UserController');
-
