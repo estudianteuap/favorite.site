@@ -34,7 +34,7 @@ class FotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->input('file'));
     }
 
     /**

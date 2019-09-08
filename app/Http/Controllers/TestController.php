@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Mail\messageReceived;
 use Illuminate\Support\Facades\Mail;
 
+use App\Foto;
 class TestController extends Controller
 {
     /**
@@ -36,7 +37,8 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
+        dd($request);
+        /*request()->validate([
             'name'=>'required',
             'subject'=>'required',
             'email'=>'required|email',
@@ -45,7 +47,7 @@ class TestController extends Controller
         
         Mail::to('estudiante_uap@hotmail.com')->send(new MessageReceived);
 
-        return 'Ok';
+        return 'Ok';*/
     }
 
     /**
