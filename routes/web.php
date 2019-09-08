@@ -11,21 +11,14 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
-Route::resource('/Album', 'AlbumController')->middleware('auth');
-
-Route::resource('/Fotos', 'FotosController');
-
-
+Route::resource('/Album', 'AlbumController')->names('Album')
+->middleware('auth');
+Route::resource('/Fotos', 'FotosController')->names('Fotos');
 Route::resource('/Perfil', 'UserController');
-
+Route::get('Perfil/{id}', 'UserController@show');
 
 Route::resource('/Test', 'TestController');
-
 Auth::routes();
-
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::resource('/Role', 'RoleController')->names('Role');

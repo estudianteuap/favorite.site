@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
-use App\User;
-class UserController extends Controller
+use App\Role;
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        //dd($user);
-        return view('usuario.index',compact('user'));
+        $roles=Role::all();
+        return view('Role.index',compact('roles'));
     }
 
     /**
@@ -25,9 +22,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('role.create');
     }
 
     /**
@@ -38,7 +35,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate(['name'=>'required',
+        'description'=>'required']);
+        //dd($request->input('name'));
+        Role::create(
+            ['name'=>$request->input('name'),
+            'description'=>$request->input('description'),
+            'slug'=>$request->input('name'),
+            ]
+        );
+        return redirect('/Role')->with('msg','Rol Creado Exitosamente');
     }
 
     /**
@@ -49,8 +55,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user=User::find($id);
-        return view('usuario.show',compact('user'));
+        //
     }
 
     /**
