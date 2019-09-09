@@ -1,2 +1,3 @@
 # My Favorite Site
 	- Para más infomación ingresar ...
+    Red Social para compartir ubicaciones y fotos favoritas
